@@ -9,6 +9,21 @@ function App() {
 
   const [url, setUrl] = useState('https://api.memegen.link/images/doge.jpeg');
 
+  function urlConstruct(memeType, topText, bottomText) {
+    if (memeType === '') {
+      memeType = 'feelsgood';
+    }
+    if (topText !== '') {
+      topText = `/${topText}`;
+    } else {
+      topText = `/_`;
+    }
+    if (bottomText !== '') {
+      bottomText = `/${bottomText}`;
+    }
+    return `${memeType}${topText}${bottomText}`;
+  }
+  console.log(urlConstruct(memeTemplate, uperText, downText));
   return (
     <div className="container">
       <h1> Meme Generator</h1>
@@ -69,7 +84,11 @@ function App() {
         <button
           onClick={() => {
             setUrl(
-              `https://api.memegen.link/images/${memeTemplate}/${uperText}/${downText}.jpg`,
+              `https://api.memegen.link/images/${urlConstruct(
+                memeTemplate,
+                uperText,
+                downText,
+              )}.jpg`,
             );
           }}
         >
@@ -84,7 +103,11 @@ function App() {
         <button
           onClick={() => {
             saveAs(
-              `https://api.memegen.link/images/${memeTemplate}/${uperText}/${downText}.jpg`,
+              `https://api.memegen.link/images/${urlConstruct(
+                memeTemplate,
+                uperText,
+                downText,
+              )}.jpg`,
               `meme-${memeTemplate}.jpg`,
             ); // Put your image url here.
           }}
