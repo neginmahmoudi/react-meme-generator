@@ -11,7 +11,7 @@ function App() {
 
   function urlConstruct(memeType, topText, bottomText) {
     if (memeType === '') {
-      memeType = 'feelsgood';
+      memeType = 'doge';
     }
     if (topText !== '') {
       topText = `/${topText}`;
