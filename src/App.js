@@ -6,7 +6,7 @@ function App() {
   const [memeTemplate, setMemeTemplate] = useState('doge');
   const [uperText, setUperText] = useState('');
   const [downText, setDownText] = useState('');
-  const [url, setUrl] = useState('https://api.memegen.link/images/doge.jpeg');
+  const [url, setUrl] = useState('https://api.memegen.link/images/doge/just/try.jpeg');
 
   return (
     <div className="container">
