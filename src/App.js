@@ -20,6 +20,13 @@ function App() {
           value={memeTemplate}
           onChange={(event) => {
             setMemeTemplate(event.currentTarget.value);
+            setUrl(
+              `https://api.memegen.link/images/${
+                memeTemplate.length > 0 ? memeTemplate : 'doge'
+              }/${uperText.length > 0 ? uperText : '_'}/${
+                downText.length > 0 ? downText : '_'
+              }.jpg`,
+            );
           }}
         />
       </label>
@@ -30,6 +37,13 @@ function App() {
           value={uperText}
           onChange={(event) => {
             setUperText(event.currentTarget.value);
+            setUrl(
+              `https://api.memegen.link/images/${
+                memeTemplate.length > 0 ? memeTemplate : 'doge'
+              }/${uperText.length > 0 ? uperText : '_'}/${
+                downText.length > 0 ? downText : '_'
+              }.jpg`,
+            );
           }}
         />
       </label>
