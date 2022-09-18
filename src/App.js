@@ -40,6 +40,13 @@ function App() {
           value={downText}
           onChange={(event) => {
             setDownText(event.currentTarget.value);
+            setUrl(
+              `https://api.memegen.link/images/${
+                memeTemplate.length > 0 ? memeTemplate : 'doge'
+              }/${uperText.length > 0 ? uperText : '_'}/${
+                downText.length > 0 ? downText : '_'
+              }.jpg`,
+            );
           }}
         />
       </label>
@@ -47,9 +54,11 @@ function App() {
       <button
         onClick={() => {
           setUrl(
-            `https://api.memegen.link/images/${memeTemplate.length>0?memeTemplate:'doge'}/${
-              uperText.length > 0 ? uperText : '_'
-            }/${downText.length>0?downText:'_'}.jpg`,
+            `https://api.memegen.link/images/${
+              memeTemplate.length > 0 ? memeTemplate : 'doge'
+            }/${uperText.length > 0 ? uperText : '_'}/${
+              downText.length > 0 ? downText : '_'
+            }.jpg`,
           );
         }}
       >
